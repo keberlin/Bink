@@ -31,6 +31,8 @@ class TestMast(unittest.TestCase):
         self.assertEqual(masts[3].property_name, "Seacroft Gate (Chase) - Block 2")
         self.assertEqual(masts[3].tenant_name, "Hutchinson3G Uk Ltd&Everything Everywhere Ltd")
         self.assertEqual(masts[3].lease_years, 25)
+        total = sum([(x.current_rent) for x in masts])
+        self.assertEqual(total, 46500.0)
 
     def test_tenant_count(self):
         counts = tenant_name_count()
